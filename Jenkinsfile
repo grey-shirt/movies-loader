@@ -1,3 +1,5 @@
+def imageName = 'grey-shirt/movies-loader'
+
 node('workers'){
     stage('Checkout'){
         checkout scm
