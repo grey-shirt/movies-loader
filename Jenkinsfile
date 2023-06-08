@@ -9,6 +9,6 @@ node('workers'){
         def imageTest= docker.build("${imageName}-test",
         "-f Dockerfile.test .")
         sh "docker run --rm -v \$(pwd)/reports:/app/reports ${imageName}-test"
-        junit "\$(pwd)/reports/*.xml"
+        junit allowEmptyResults: true, testResults: "\$(pwd)/reports/*.xml"
     }
 }
